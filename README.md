@@ -1,4 +1,4 @@
-# DDCA-HA-mmscorecam-for-multi-modal-MRI
+# NeuroAlign-SAM-for-multi-modal-MRI
 A framework of hierarchical alignments, dual-domain cross-attention,mmscorecam. This code is the network implementation for paper $${\color{red} Leveraging \space multi-modal \space  MRI \space synergies  \space for  \space  cognitive  \space decline  \space  detection:  \space dual-domain \space cross-attention \space  enhanced \space by \space  hierarchical \space alignments}$$
 ## __Environment__  
 ```diff  
