@@ -131,10 +131,8 @@ if len(data_SMC) > 0:
 #                 data_SMC.append(OsJoin(root, filename))
 #                 label_SMC.append(-1)  # 1 for MCI label
 # health_list = np.array([data_health, label_health]).transpose()
-# MCI_list = np.array([data_MCI, label_MCI]).transpose()  # 都是按照名称顺序排列读入
+# MCI_list = np.array([data_MCI, label_MCI]).transpose()  
 # SMC_list = np.array([data_SMC, label_SMC]).transpose()
-  #固定seed后每种数据都按照同一shuffle顺序排列
-  # 打乱行顺序
 
 
 #health_list_rand = np.random.permutation(health_list)
@@ -193,7 +191,6 @@ for i in range(1, n_fold+1):
     np.random.shuffle(names2['train_list_fold%s'%i])
     np.random.shuffle(names2['val_list_fold%s'%i])
 
-   # 按行堆叠
 np.random.seed(opt.manual_seed)
 np.random.shuffle(test_list)
 
@@ -202,14 +199,14 @@ if not os.path.exists(csv_save_path):
     os.makedirs(csv_save_path)
 
 for i in range(1, n_fold+1):
-    with open(OsJoin(csv_save_path, 'train_fold%s.csv'%i), 'w', newline='') as f:  # 设置文件对象
+    with open(OsJoin(csv_save_path, 'train_fold%s.csv'%i), 'w', newline='') as f:  
         f_csv = csv.writer(f)
         f_csv.writerows(names2.get('train_list_fold%s'%i))
-    with open(OsJoin(csv_save_path, 'val_fold%s.csv'%i), 'w', newline='') as f:  # 设置文件对象
+    with open(OsJoin(csv_save_path, 'val_fold%s.csv'%i), 'w', newline='') as f:  
         f_csv = csv.writer(f)
         f_csv.writerows(names2.get('val_list_fold%s'%i))
 
 
-with open(OsJoin(csv_save_path, 'test.csv'), 'w', newline='') as f:  # 设置文件对象
+with open(OsJoin(csv_save_path, 'test.csv'), 'w', newline='') as f: 
     f_csv = csv.writer(f)
     f_csv.writerows(test_list)
