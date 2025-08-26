@@ -25,7 +25,9 @@ def downsample_basic_block(x, planes, stride):
     out = Variable(torch.cat([out.data, zero_pads], dim=1))
 
     return out
-
+'''
+backbone
+'''
 
 class BasicBlock(nn.Module):
     expansion = 1
