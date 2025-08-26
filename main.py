@@ -94,6 +94,6 @@ def run(fold_id, opt):
 
 if __name__ == '__main__':
     opt = parse_opts()
-    # 交叉验证
+    # folds validation
     for fold_id in range(1, opt.n_fold + 1):
         run(fold_id, opt)
