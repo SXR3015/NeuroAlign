@@ -116,38 +116,6 @@ if len(data_SMC) > 0:
     n_train_val_SMC = SMC_list.shape[0] - n_test_SMC
     train_val_list_SMC = SMC_list[0:n_train_val_SMC, :]
     test_list_SMC = SMC_list[n_train_val_SMC:SMC_list.shape[0], :]
-# for feature in os.listdir(root):
-#     for filename in os.listdir(os.path.join(root, feature)):
-#        # for file in filename:
-#             if 'HC' in filename:
-#                 #data_health.append(OsJoin(root, filename))
-#
-#                 label_health.append(0) # 0 for health label
-#         #for filename in os.listdir(OsJoin(root, MCI_dir)):
-#             elif 'MCI' in filename:
-#                 data_MCI.append(OsJoin(root, filename))
-#                 label_MCI.append(1) # 1 for MCI label
-#             elif 'SMC' in filename:
-#                 data_SMC.append(OsJoin(root, filename))
-#                 label_SMC.append(-1)  # 1 for MCI label
-# health_list = np.array([data_health, label_health]).transpose()
-# MCI_list = np.array([data_MCI, label_MCI]).transpose()  
-# SMC_list = np.array([data_SMC, label_SMC]).transpose()
-
-
-#health_list_rand = np.random.permutation(health_list)
-# rand_rows = np.arange(health_list.shape[0])# health_list = health_list[rand_rows]
-
-
-# # down sampling
-# MCI_list = MCI_list[0:health_list.shape[0]]
-
-  # number of test samples
-
-# number of test samples
- # number of trainning samples
-
-# number of trainning samples
 
 kf = KFold(n_splits=opt.n_fold, shuffle=False)
 n = 0
