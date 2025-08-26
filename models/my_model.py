@@ -691,6 +691,9 @@ class my_model_name(nn.Module):
         if len(fea_arr_fc) > 1 or len(fea_arr_local_dti) > 1:
             fea_arr_local_dti_fusion = [torch.multiply(x_array_list[0], x_array_list[2])
                 , torch.add(x_array_list[0], x_array_list[2])]
+            '''
+            contrastive learning for FSA  and DSA
+            '''
             loss_cl_fsa = self.contrastive_loss(fea_arr_local_dti_fusion)
             loss_cl_dsa = self.contrastive_loss([x_array_list[1], x_array_list[3]])
             loss_ce = self.criterion(x, x_t_1)
@@ -733,34 +736,4 @@ def resnet18(**kwargs):
     """Constructs a ResNet-18 model.
     """
     model = ResNet(BasicBlock, [2, 2, 2, 2], **kwargs)
-    return model
-
-def resnet34(**kwargs):
-    """Constructs a ResNet-34 model.
-    """
-    model = ResNet(BasicBlock, [3, 4, 6, 3], **kwargs)
-    return model
-
-def resnet50(**kwargs):
-    """Constructs a ResNet-50 model.
-    """
-    model = ResNet(Bottleneck, [3, 4, 6, 3], **kwargs)
-    return model
-
-def resnet101(**kwargs):
-    """Constructs a ResNet-101 model.
-    """
-    model = ResNet(Bottleneck, [3, 4, 23, 3], **kwargs)
-    return model
-
-def resnet152(**kwargs):
-    """Constructs a ResNet-101 model.
-    """
-    model = ResNet(Bottleneck, [3, 8, 36, 3], **kwargs)
-    return model
-
-def resnet200(**kwargs):
-    """Constructs a ResNet-101 model.
-    """
-    model = ResNet(Bottleneck, [3, 24, 36, 3], **kwargs)
     return model
