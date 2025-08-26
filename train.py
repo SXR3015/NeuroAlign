@@ -26,7 +26,6 @@ def train_epoch(epoch, fold_id, data_loader, model, criterion, optimizer,
         data_time.update(time.time()-end_time)
         labels = list(map(int, labels))
         inputs= (torch.unsqueeze(input,1) for input in inputs)
-        #inputs = torch.unsqueeze(inputs,1)  #在 1 的位置加一个维度
      #   inputs = inputs.type(torch.FloatTensor)
         inputs = (input.type(torch.FloatTensor) for input in inputs)
        # inputs = (input.type(torch.Float64) for input in inputs)
